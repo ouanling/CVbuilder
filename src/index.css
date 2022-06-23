@@ -1,13 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Ubuntu Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+}
+.root {
+  max-width: 80vw;
+}
+img {
+  height: 16px;
+}
+button {
+  cursor: pointer;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 3px hsl(0deg 0% 0% / 10%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.CV-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 10px;
+  
+  
+
+  
+}
+.CV-edit, .CV-view {
+  place-self: center;
+  border: 2px solid rgb(19, 118, 108);
+  border-radius: 5px;
+  gap: 25px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+.CV-view {
+  box-shadow: 5px 0 6px 0 hsl(0deg 0% 0% / 20%)
+}
+
+header {
+  display: flex; 
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  gap: 15px;
+}
+input {
+  border: 1px solid grey;
+  border-radius: 3px;
+  width: 500px;
+  min-width: 50%;
+  max-width: 100%;
+  
+  
+  font-size: 1rem;
+  
+  
+  
+}
+.btnwrap {
+  display: flex;
+  gap: 8px;
+}
+button {
+  border: 1px solid grey;
+  padding: 4px 16px;
+  border-radius: 5px;
+  font-size: .9rem;
+  font-weight: 600;
+  max-width: 80px;
+  transition: all .15s;
+  background: none;
+
+}
+.contact-text {
+  font-size: .8rem;
+}
+.contact-box, .heading {
+  display: flex;
+  flex-direction: column;
+
+
+}
+.contact-box {
+  align-items: flex-start;
+  gap: 7px;
+}
+h1 {
+  text-transform: uppercase;
+  color: rgb(19, 118, 108);
+}
+h2 {
+  color: grey;
+  font-weight: 400;
+}
+.CV-view  h3 {
+  color:rgb(72, 180, 243)
+}
+.CV-view h4 {
+  font-weight: 600;
+  color: #5e5e5e;
+}
+.experience-list {
+  font-size: 0.9rem;
+}
+.experience-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #5e5e5e;
+  
+}
+.bold {
+  font-weight: 600;
+}
+.sumary {
+  font-size: 0.9rem;
 }

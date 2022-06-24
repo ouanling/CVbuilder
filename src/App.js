@@ -33,6 +33,38 @@ function App() {
     })}
   }; 
  
+  function handleAdd(ev) {
+    const newobj = {
+      "job": "",
+      "jobplace": "",
+      "jobfrom": "",
+      "jobto": "",
+      "jobdesc": "",
+  };
+
+      if (ev === "work") {
+       const tempData = [...infoObj["work"]];
+       tempData.push(newobj);
+       setInfoObj({...infoObj, "work": tempData})
+
+      }};
+  function handleDel(ev, ind) {
+    const newarr = infoObj[ev].filter( (item, index) => index !== ind);
+    setInfoObj({...infoObj, [ev]: newarr});
+    
+    
+
+
+    // setInfoObj(...prevState => ({
+    //   work: prevState.work.filter((item, itemIndex) => itemIndex != ind)
+    // }))
+  
+      
+  
+
+  };
+
+
   return (
     
   <div className="CV-container">
@@ -46,7 +78,7 @@ function App() {
           <input type="text" name="intro" onChange={handleChange} value={infoObj.intro}></input>
         <h3>Work Experience</h3>
         <div>
-             { infoObj["work"].map((item, index) => <WorkEdit key={index} long={infoObj["work"].length} ind={index} handleChange={handleChange} item={item} />) }
+             { infoObj["work"].map((item, index) => <WorkEdit key={index} long={infoObj["work"].length} ind={index} handleChange={handleChange} handleAdd={handleAdd} handleDel={handleDel} item={item} />) }
          </div>
         {/* <WorkEdit handleChange={handleChange} {...infoObj["work"][0]}/> */}
         <h3>Education</h3>

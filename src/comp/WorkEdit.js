@@ -1,4 +1,4 @@
-function WorkEdit({handleChange, item, ind, long}) {
+function WorkEdit({handleChange, handleAdd, handleDel, item, ind, long}) {
     
   return (
     <div className="WorkAdd">
@@ -33,8 +33,8 @@ function WorkEdit({handleChange, item, ind, long}) {
         value={item.jobdesc}
       ></input>
       <div className="btnwrap" style={ (long -1 === ind) ? {} : {paddingBottom: "36px"}}>
-        <button >Delete</button>
-        <button>Add</button>
+        <button onClick={() => handleDel("work", ind)} >Delete</button>
+        { (long -1 === ind) && <button onClick={() => handleAdd("work")}>Add</button>}
       </div>
     </div>
   );

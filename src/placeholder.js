@@ -26,13 +26,13 @@ const placehold = {
         }
     ],
     schooling: [
-        {
+        {   
             diploma: "Bitch de cuisine certifier",
             school: "Ecole hoteliere",
             schoolfrom: "2021",
             schoolto: "2022",
             desc: "bouche trou et bouc emissaire"
-        }
+        },
     ]
 
 }

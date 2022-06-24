@@ -11,6 +11,8 @@ body {
 #root {
   display: flex;
   justify-content: center;
+  width: 100%;
+
 }
 img {
   height: 16px;
@@ -27,7 +29,7 @@ button:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 10px;
-  max-width: 80%;
+  position: relative;
   
   
 
@@ -44,15 +46,23 @@ button:hover {
   
   
 }
-.WorkAdd {
+.WorkAdd, .SchoolAdd {
   gap: 25px;
   display: flex;
   flex-direction: column;
 
 
 }
+.printerbtn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #ff347f;
+  color: #fafafa
+}
 .CV-view {
-  box-shadow: 5px 0 6px 0 hsl(0deg 0% 0% / 20%)
+  box-shadow: 5px 0 6px 0 hsl(0deg 0% 0% / 20%);
+  max-width: 825px;
 }
 
 header {

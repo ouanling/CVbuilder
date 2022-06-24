@@ -1,21 +1,21 @@
 import React from 'react';
 
-function Schooling({schooling}) {
+function Schooling({item}) {
     return ( 
         <div className="experience">
         <div className="experience-heading">
-          <h4>{schooling[0]["diploma"]}</h4>
+          <h4>{item["diploma"]}</h4>
           <div className="experience-details">
-          {schooling[0]["school"]}
+          {item["school"]}
             |
             <span className="bold">
-            {schooling[0]["schoolfrom"]}
+            {item["schoolfrom"]}
               -
-              {schooling[0]["schoolto"]}
+              {item["schoolto"]}
             </span>
           </div>
         </div>
-        <div>{schooling[0]["desc"]}</div>
+        <div>{item["desc"]}</div>
       </div>
      );
 }

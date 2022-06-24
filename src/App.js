@@ -78,9 +78,10 @@ function App() {
           <input type="text" name="intro" onChange={handleChange} value={infoObj.intro}></input>
         <h3>Work Experience</h3>
         <div>
-             { infoObj["work"].map((item, index) => <WorkEdit key={index} long={infoObj["work"].length} ind={index} handleChange={handleChange} handleAdd={handleAdd} handleDel={handleDel} item={item} />) }
+          { (infoObj["work"].length === 0) ?  <button onClick={() => handleAdd("work")}>Add</button> : infoObj["work"].map((item, index) => <WorkEdit key={index} long={infoObj["work"].length} ind={index} handleChange={handleChange} handleAdd={handleAdd} handleDel={handleDel} item={item} />)  }
+             
          </div>
-        {/* <WorkEdit handleChange={handleChange} {...infoObj["work"][0]}/> */}
+        
         <h3>Education</h3>
           <input type="text" name="diploma" onChange={ev => handleChange(ev, 'schooling')} value={infoObj.schooling[0]["diploma"]}></input>
           <input type="text" name="school" onChange={ev => handleChange(ev, 'schooling')} value={infoObj.schooling[0]["school"]}></input>

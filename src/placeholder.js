@@ -14,8 +14,14 @@ const placehold = {
             jobfrom: "2021",
             jobto: "2022",
             jobdesc: "Lave vaiselle de tous, ramasse tout, victime de racisme",
-
-
+        
+        },
+        {
+            job: "Simp de Tamare",
+            jobplace: "Ecole haitienne",
+            jobfrom: "2021",
+            jobto: "2022",
+            jobdesc: "coupe et lave pour la reine tamare"
         }
     ],
     schooling: [
@@ -24,7 +30,7 @@ const placehold = {
             school: "Ecole hoteliere",
             schoolfrom: "2021",
             schoolto: "2022",
-            desc: "bouche trou et bouque emissaire"
+            desc: "bouche trou et bouc emissaire"
         }
     ]
 

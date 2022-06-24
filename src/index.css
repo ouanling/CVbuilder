@@ -8,8 +8,9 @@ body {
 
 
 }
-.root {
-  max-width: 80vw;
+#root {
+  display: flex;
+  justify-content: center;
 }
 img {
   height: 16px;
@@ -26,6 +27,7 @@ button:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 10px;
+  max-width: 80%;
   
   
 
@@ -41,6 +43,13 @@ button:hover {
   flex-direction: column;
   
   
+}
+.WorkAdd {
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
+
+
 }
 .CV-view {
   box-shadow: 5px 0 6px 0 hsl(0deg 0% 0% / 20%)
@@ -69,6 +78,7 @@ input {
 .btnwrap {
   display: flex;
   gap: 8px;
+  /* padding-bottom: 36px; */
 }
 button {
   border: 1px solid grey;

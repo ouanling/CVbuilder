@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 
-function Work({work}) {
+function Work({item}) {
     return (  
         <div className="experience">
         <div className="experience-heading">
-          <h4>{work[0]["job"]}</h4>
+          <h4>{item["job"]}</h4>
           <div className="experience-details">
-            {work[0]["jobplace"]}  
+            {item["jobplace"]}  
              |
             <span className="bold">
-               {work[0]["jobfrom"]}
+               {item["jobfrom"]}
               -
-              {work[0]["jobto"]}
+              {item["jobto"]}
             </span>
           </div>
         </div>
         <div>
-        {work[0]["jobdesc"]}
+        {item["jobdesc"]}
         </div>
       </div>
     );

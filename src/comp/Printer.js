@@ -10,7 +10,8 @@ export class ComponentToPrint extends React.PureComponent {
         <Heading {...this.props.obj}/>
             <div className="experience-list">
               <h3>Work Experience</h3>
-              <Work {...this.props.obj} />
+              <div> { this.props.obj["work"].map((item, index) => <Work key={index} item={item} />) } </div>
+              {/* <Work {...this.props.obj} /> */}
             </div>
             <div className="experience-list">
               <h3>School Experience</h3>

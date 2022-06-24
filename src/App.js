@@ -5,6 +5,7 @@ import Work from "./comp/Work";
 import Schooling from "./comp/Schooling";
 import { useReactToPrint } from "react-to-print";
 import { ComponentToPrint } from "./comp/Printer";
+import WorkEdit from "./comp/WorkEdit";
 
 
 
@@ -17,11 +18,12 @@ function App() {
       content: () => componentRef.current,
     });
   
-  function handleChange(ev, arrays) {
+  function handleChange(ev, arrays, indexe) {
     const { name, value } = ev.target
+    const idid = indexe;
     if (arrays) {
     const tempData = [...infoObj[arrays]];
-    tempData[0][name] = value;
+    tempData[idid][name] = value;
     setInfoObj({...infoObj, arrays: tempData })
     }
 
@@ -43,15 +45,10 @@ function App() {
           <input type="text" name="city" onChange={handleChange} value={infoObj.city}></input>
           <input type="text" name="intro" onChange={handleChange} value={infoObj.intro}></input>
         <h3>Work Experience</h3>
-          <input type="text" name="job" onChange={ev => handleChange(ev, 'work')} value={infoObj.work[0]["job"]}></input>
-          <input type="text" name="jobplace" onChange={ev => handleChange(ev, 'work')} value={infoObj.work[0]["jobplace"]}></input>
-          <input type="text" name="jobfrom" onChange={ev => handleChange(ev, 'work')} value={infoObj.work[0]["jobfrom"]}></input>
-          <input type="text" name="jobto" onChange={ev => handleChange(ev, 'work')} value={infoObj.work[0]["jobto"]}></input>
-          <input type="text" name="jobdesc" onChange={ev => handleChange(ev, 'work')} value={infoObj.work[0]["jobdesc"]}></input>
-          <div className="btnwrap">
-            <button>Delete</button>
-            <button>Add</button>
-          </div>
+        <div>
+             { infoObj["work"].map((item, index) => <WorkEdit key={index} long={infoObj["work"].length} ind={index} handleChange={handleChange} item={item} />) }
+         </div>
+        {/* <WorkEdit handleChange={handleChange} {...infoObj["work"][0]}/> */}
         <h3>Education</h3>
           <input type="text" name="diploma" onChange={ev => handleChange(ev, 'schooling')} value={infoObj.schooling[0]["diploma"]}></input>
           <input type="text" name="school" onChange={ev => handleChange(ev, 'schooling')} value={infoObj.schooling[0]["school"]}></input>
@@ -67,7 +64,9 @@ function App() {
         <Heading {...infoObj}/>
             <div className="experience-list">
               <h3>Work Experience</h3>
-              <Work {...infoObj} />
+              <div>
+             { infoObj["work"].map((item, index) => <Work key={index} item={item} />) }
+         </div>
             </div>
             <div className="experience-list">
               <h3>School Experience</h3>

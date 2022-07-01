@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { placehold } from "./placeholder";
 import Heading from "./comp/heading";
 import Work from "./comp/Work";
@@ -7,8 +7,15 @@ import { useReactToPrint } from "react-to-print";
 import { ComponentToPrint } from "./comp/Printer";
 import WorkEdit from "./comp/WorkEdit";
 import SchoolEdit from "./comp/SchoolEdit";
+import Nav from "./comp/Nav";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, getUserData, updateUserData } from "./firebase";
+import { get } from "firebase/database";
 
 function App() {
+  const [user, loading, error] = useAuthState(auth);
+
+  // const [infoObj, setInfoObj] = React.useState(placehold);
   const [infoObj, setInfoObj] = React.useState(placehold);
 
   const componentRef = useRef();
@@ -59,8 +66,36 @@ function App() {
     const newarr = infoObj[ev].filter((item, index) => index !== ind);
     setInfoObj({ ...infoObj, [ev]: newarr });
   }
+
+    
+
+
+
+  useEffect(() => { 
+    async function getStateifTrue() {
+  
+      
+        try {
+        const datas = await getUserData(user?.uid);
+        setInfoObj(datas.data);
+        }
+        catch (e) {
+          console.log(e)
+        }
+    } ;
+    getStateifTrue()
+  }, [user]);
+  
+  
+    useEffect(() => { 
+      if (user) { updateUserData(user?.uid, infoObj) };
+}, [infoObj]);
+
+
   return (
-    <div className="CV-container">
+    <div>
+      <Nav />
+      <div className="CV-container">
       <button className="printerbtn" onClick={handlePrint}>Print to PDF</button>
       <div className="CV-edit">
         <h3>Personnal Details</h3>
@@ -160,6 +195,7 @@ function App() {
       </div>
       {/* <button className="printerbtn" onClick={handlePrint}>Print to PDF</button> */}
     </div>
+  </div>
   );
 }
 

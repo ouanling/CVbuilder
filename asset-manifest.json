@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/CVbuilder/static/css/main.dcad4012.css",
-    "main.js": "/CVbuilder/static/js/main.c83fe70d.js",
+    "main.css": "/CVbuilder/static/css/main.883bbde7.css",
+    "main.js": "/CVbuilder/static/js/main.ec804c81.js",
     "static/media/mail.svg": "/CVbuilder/static/media/mail.bcb187448eea33563fb58e7919f0c110.svg",
     "index.html": "/CVbuilder/index.html",
     "static/media/phone.svg": "/CVbuilder/static/media/phone.9c22c8e1baf7a08ef85e2c3da2016020.svg",
     "static/media/location.svg": "/CVbuilder/static/media/location.d9fe5579ce7cf80dff9dec10233e4dcf.svg",
-    "main.dcad4012.css.map": "/CVbuilder/static/css/main.dcad4012.css.map",
-    "main.c83fe70d.js.map": "/CVbuilder/static/js/main.c83fe70d.js.map"
+    "main.883bbde7.css.map": "/CVbuilder/static/css/main.883bbde7.css.map",
+    "main.ec804c81.js.map": "/CVbuilder/static/js/main.ec804c81.js.map"
   },
   "entrypoints": [
-    "static/css/main.dcad4012.css",
-    "static/js/main.c83fe70d.js"
+    "static/css/main.883bbde7.css",
+    "static/js/main.ec804c81.js"
   ]
 }

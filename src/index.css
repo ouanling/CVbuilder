@@ -11,7 +11,6 @@ body {
 #root {
   display: flex;
   justify-content: center;
-  width: 100%;
 
 }
 img {
@@ -93,19 +92,19 @@ button:hover {
   max-width: 825px;
 }
 
-header {
+/* header {
   display: flex; 
   justify-content: space-between;
   width: 100%;
   align-items: center;
   gap: 15px;
-}
+} */
 input {
   border: 1px solid grey;
   border-radius: 3px;
-  width: 500px;
+  max-width: 500px;
   min-width: 50%;
-  max-width: 100%;
+  
   
   
   font-size: 1rem;
@@ -128,6 +127,9 @@ button {
   transition: all .15s;
   background: none;
 
+}
+.CV-edit {
+  min-width: 80%;
 }
 .contact-text {
   font-size: .8rem;
